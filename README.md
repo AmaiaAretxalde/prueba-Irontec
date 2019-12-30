@@ -1,4 +1,4 @@
-Este ejemplo sirve de interfaz gráfica para listar (con paginado) todas las issues de proyectos alojados en github.com, con información relevante de cada issue.
+Este ejemplo sirve de interfaz gráfica para listar (con paginado, pudiendo elegir el número de items por página) todas las issues de proyectos alojados en github.com, con información relevante de cada issue.
 
 Solicita completar la URL con Nombre de Usuario en Github y Nombre de repositorio.
 

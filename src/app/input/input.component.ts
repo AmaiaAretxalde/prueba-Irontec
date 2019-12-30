@@ -14,22 +14,38 @@ export class InputComponent {
   url:string ="";
   issues:any[]=[];
   page:number = 1;
-  lastPage:number = 1;
+  lastPage:number;
+  mounted:boolean = false;
  
   constructor(private githubService:GithubService) { }
   
   async buscarIssues(){
+    this.mounted=false;
+    this.lastPage=1;
+    console.log('buscando')
     for(let i=0;i<this.lastPage;i++){
-      let urlCompleta:string = 'https://api.github.com/repos/'+ this.url+'/issues?page='+this.page + '&per_page=100';
+      console.log(this.url)
+      console.log(this.page)
+      let urlCompleta = this.completarUrl(this.url, this.page)
+      console.log(urlCompleta)
       let response = await this.githubService.buscarIssues(urlCompleta);
       this.issues = this.issues.concat(response.body);
       this.lastPage = this.parse_link_header(response.headers.get('Link'))
       this.page++;
     }
+    this.mounted=true;
+    console.log(this.mounted)
+    console.log(this.issues.length)
+    
+  }
+
+  completarUrl(url:string, page:number){
+    let urlCompleta:string = 'https://api.github.com/repos/'+ url+'/issues?page='+ page + '&per_page=100';
+    return urlCompleta;
   }
 
   parse_link_header(header:any) {
-    if (header.length === 0) {
+    if (header===null || header.length===0) {
       return ;
     }
     let parts = header.split(',');

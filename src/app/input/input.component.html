@@ -1,6 +1,6 @@
 <div class="form">
-  <p>Completa la URL con:</p>
-  <p>Nombre de Usuario Github / Nombre repositorio</p>
+  <h1>Completa la URL con:</h1>
+  <h2>Nombre de Usuario Github / Nombre repositorio</h2>
 
   <mat-form-field class="example-form-field">
     <span matPrefix>https://api.github.com/repos/ &nbsp;</span>
@@ -16,20 +16,25 @@
   (page)="handlePage($event)">
 </mat-paginator>
 
-
-<div class="cards">
-  <div *ngFor="let dato of issues |pagination:page_size:page_number">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Issue Número: {{dato.number}}</mat-card-title>
-        <mat-card-subtitle>Título: {{dato.title}}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Fecha creación: {{dato['created_at'].substring(0,10)}}</p>
-        <p>Última actualización: {{dato['updated_at'].substring(0,10)}}</p>
-        <p>Estado: {{dato.state}}</p>
-        <p>Contenido: {{dato.body.substring(0,350)}}</p>
-      </mat-card-content>
-    </mat-card>
+<ng-container *ngIf="issues.length!==0 && issues!==null">
+  <div class="cards">
+    <div *ngFor="let dato of issues |pagination:page_size:page_number">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Issue Número: {{dato.number}}</mat-card-title>
+          <mat-card-subtitle>Título: {{dato.title}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Fecha creación: {{dato['created_at'].substring(0,10)}}</p>
+          <p>Última actualización: {{dato['updated_at'].substring(0,10)}}</p>
+          <p>Estado: {{dato.state}}</p>
+          <p>Contenido: {{dato.body.substring(0,350)}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
-</div>
+</ng-container>
+
+<ng-container *ngIf="issues.length===0 && mounted===true">
+  <h2>No se han encontrado issues en el repositorio especificado</h2>
+</ng-container>
