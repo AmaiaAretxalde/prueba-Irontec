@@ -1,27 +1,21 @@
-# Prueba
+Este ejemplo sirve de interfaz gráfica para listar (con paginado) todas las issues de proyectos alojados en github.com, con información relevante de cada issue.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+Solicita completar la URL con Nombre de Usuario en Github y Nombre de repositorio.
 
-## Development server
+Para probar el ejemplo de este repositorio, teclea los siguientes comandos:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1.- Clona este repositorio en local:
+git clone https://github.com/AmaiaAretxalde/prueba-Irontec.git
 
-## Code scaffolding
+2.- Entra en el directorio del proyecto:
+cd prueba-Irontec
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3.- Instala las dependencias:
+npm install
 
-## Build
+4.- Lanza la aplicación para abrirla en el navegador
+npm start
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+5.- Abre en navegador 
+http://localhost:4200/
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
