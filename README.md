@@ -7,8 +7,7 @@ Para probar el ejemplo de este repositorio, teclea los siguientes comandos:
 1.- Clona este repositorio en local:
 git clone https://github.com/AmaiaAretxalde/prueba-Irontec.git
 
-2.- Entra en el directorio del proyecto:
-cd prueba-Irontec
+2.- Entra en el directorio del proyecto
 
 3.- Instala las dependencias:
 npm install
